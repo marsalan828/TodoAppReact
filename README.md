@@ -1,8 +1,42 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A simple and interactive Todo application built using React. This app allows users to create, manage, and delete todo tasks easily. Users can mark tasks as done, undo their actions, and see their todo items displayed with a clear interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Add new todo tasks
+- Mark tasks as done with a line-through effect
+- Undo the done state of tasks
+- Delete todo tasks
+- Responsive and user-friendly interface
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces
+- **JavaScript**: For application logic
+- **CSS**: For styling the components
+- **HTML**: For the structure of the application
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/react-todo-app.git
+
+# Initial Environment Setup for React using Vite
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- **Node.js**: Vite requires Node.js version 12.0 or higher. You can download it from [nodejs.org](https://nodejs.org/).
+- **npm** (Node Package Manager): This is included with Node.js. You can check if it's installed by running:
+  ```bash
+  npm -v
+- **start server**
+  ```bash
+  npm create vite@latest my-react-app --template react
+  npm install
+  npm run dev
