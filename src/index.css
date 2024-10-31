@@ -24,15 +24,21 @@ a:hover {
 
 body {
   margin: 0;
+  justify-content: center;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+li{
+  list-style: none;
+ 
 }
 
 button {
@@ -67,12 +73,44 @@ button:focus-visible {
   }
 }
 
-.TodoItem{
+.TodoItem {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  max-width: 400px;
 }
 
-.btn{
-  border: 1px solid black;
-  margin: 1px ;
+.TodoItem ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.TodoItem li {
+  display: flex;
+  justify-content: space-between; /* Space between text and 'x' */
+  align-items: center;            /* Center vertically */
+  padding: 10px 15px;             /* Add padding around content */
+  border: 1px solid #ddd;         /* Add a border */
+  border-radius: 8px;             /* Rounded corners */
+  background-color: #f9f9f9;      /* Light background color */
+  cursor: pointer;
+}
+
+.TodoItem .close {
+  color: #ff6666;                 /* Color for 'x' */
+  font-weight: bold;
+  cursor: pointer;
+}
+.TodoItem .close:hover{
+  background-color: #30294e;
+}
+
+.lineThrough {
+  text-decoration: line-through;    /* Add strikethrough effect */
+}
+
+.noLineThrough{
+  text-decoration: none;
 }
