@@ -9,8 +9,6 @@ function TodoItemComponent (props){
     const handleTaskUnDo = () => {
         setIsDone(false);
     }
-
-    
     
     return (
         <div className="TodoItem">
@@ -19,14 +17,14 @@ function TodoItemComponent (props){
                 <ul>
                     <li onClick={handleTaskUnDo}>
                         <span className="lineThrough">{props.title}</span>
-                        <span className="close" onClick={props.onDelete}>x</span>
+                        <span className="close" onClick={() => props.onDelete(props.index)}>x</span>
                     </li>
                 </ul>
             ) :(
                 <ul>
                     <li onClick={handleTaskDone}>
                         <span className="noLineThrough">{props.title}</span>
-                        <span className="close" onClick={props.onDelete}>x</span>
+                        <span className="close" onClick={() => props.onDelete(props.index)}>x</span>
                     </li>
                 </ul>
             )}

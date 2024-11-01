@@ -13,14 +13,11 @@ function TodoListComponent(){
     const handleTaskCreate = () =>{
         setTasks([...tasks,title]);
         setTitle("");
-        // console.log(tasks);
     }
-    
-    const handleTaskDelete = (index) =>{
+
+    const handleDelTask = (index) =>{
         const newTasks = [...tasks];
-        newTasks.splice(index, 1);
-        setTasks(newTasks);
-        console.log(tasks);
+        setTasks(newTasks.filter((_, i) => i !== index));
     }
 
         
@@ -31,7 +28,7 @@ function TodoListComponent(){
             <button className="addTask" onClick={handleTaskCreate}>Add</button>
             <ul>
                 {tasks.map((title,index)=>{
-                    return <TodoItemComponent key={index} title={title} onDelete={handleTaskDelete}/>;
+                    return <TodoItemComponent key={index} index={index} title={title} onDelete={handleDelTask} />;
                 })}
             </ul>
         </Fragment>
