@@ -1,35 +1,19 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
-function TodoItemComponent (props){
-    const [isDone,setIsDone] = useState(false);
-
-    const handleTaskDone = () => {
-        setIsDone(true);
-    }
-    const handleTaskUnDo = () => {
-        setIsDone(false);
-    }
-    
+function TodoItemComponent(props) {
     return (
         <div className="TodoItem">
-            
-            { isDone ? (
-                <ul>
-                    <li onClick={handleTaskUnDo}>
-                        <span className="lineThrough">{props.title}</span>
-                        <span className="close" onClick={() => props.onDelete(props.index)}>x</span>
-                    </li>
-                </ul>
-            ) :(
-                <ul>
-                    <li onClick={handleTaskDone}>
-                        <span className="noLineThrough">{props.title}</span>
-                        <span className="close" onClick={() => props.onDelete(props.index)}>x</span>
-                    </li>
-                </ul>
-            )}
-            
-            
+            <ul>
+                <li onClick={props.onToggle}>  {/* Call onToggle when the item is clicked */}
+                    <span className={props.isDone ? "lineThrough" : "noLineThrough"}>
+                        {props.title}
+                    </span>
+                    <span className="close" onClick={(e) => {
+                        e.stopPropagation(); // Prevent the toggle from firing
+                        props.onDelete();
+                    }}>x</span>
+                </li>
+            </ul>
         </div>
     );
 }
